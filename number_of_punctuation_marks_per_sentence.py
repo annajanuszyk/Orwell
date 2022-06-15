@@ -10,7 +10,7 @@ count = 0;
 str = "Good Morning! This is an example.";
 
 for i in range(0, len(str)):
-    if str[i] in ('!', "," ,"\'" ,";" ,"\"", ".", "-" ,"?"):
+    if str[i] in ("!" , "," , "\" , ";" , "/" , "." , "-" , "?"):
         count = count + 1;
         
 print("Total number of punctuation marks in string: ");
