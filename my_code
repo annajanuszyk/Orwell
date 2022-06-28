@@ -1,0 +1,13 @@
+r_file = open( "tu wpisujemy ścieżkę", "r")
+text = r_file.read()
+r_file.close()
+
+count = 0;
+
+for i in range(0, len(text)):
+    if text[i] in ("!" , "," , "\ " , ";" , "/" , "." , "-" , "?"):
+        count = count + 1;
+
+s_file = open("count", "w")
+s_file.write("Total number of punctuation marks in string: %i" % count)        
+s_file.close()
