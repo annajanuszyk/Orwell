@@ -1,0 +1,16 @@
+"Program ma za zadanie zliczenie ilości znaków interpunkcyjnych, w tym podliczenie łącznej sumy każdego rodzaju znaków intepunkcyjnych"
+
+
+r_file = open( "tu wpisujemy ścieżkę", "r") #Otwiera plik i "r" oznacza, że jest to tylko do odczytu
+text = r_file.read() #Odczytujemy zawartość pliku i zapisujemy to jako zmienną
+r_file.close() #Zamykamy plik
+
+count = 0; #Zmienna, która ma przechowywać liczbę odczytanych znaków specjalnych
+
+for i in range(0, len(text)): #Uruchamiamy pętle, która działa przez wszystkie znaki stream'u
+    if text[i] in ("!" , "," , "\ " , ";" , "/" , "." , "-" , "?"): #Robimy warunek - napotkanie, któregoś z wymienionych znaków, które zwiększy liczbę zliczeń o + 1
+        count = count + 1; #Zmienna zapisują liczbę zliczeń
+
+s_file = open("count", "w") #Otwieramy plik, do którego będziemy zapisywać liczbę zliczeń
+s_file.write("Total number of punctuation marks in string: %i" % count) #Zapis w otwartym pliku liczby zliczeń        
+s_file.close() #Zamknięcie pliku
