@@ -8,11 +8,14 @@ Created on Wed Jun 15 11:28:28 2022
 import unicodedata
 import string
 
-def punctuation_marks_in_sentence(sentence):
+
+def punctuation_count(sentence):
     count = 0
-    for s in sentence:
-        if unicode.category(s).startswith("P"):
-            count = count + 1
+    for i, s in enumerate(sentence):
+        # Pause in Chinese requires two charcters
+        if unicodedata.category(s).startswith("P"):
+            if i > 0 and sentence[i-1] != s:
+                count = count + 1
     return count    
 
 
