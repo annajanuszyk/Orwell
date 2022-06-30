@@ -45,5 +45,16 @@ class TestPunctuationCount(unittest.TestCase):
     def test_English(self):
          self.assertEqual(u.punctuation_count(str_English), 6)
 
+
+class TestWordsPerSentence(unittest.TestCase):
+    def test_English(self):
+        out = u.words_per_sentence(str_English)
+        self.assertEqual(out, [14, 41])
+
+    def test_Polish(self):
+        out = u.words_per_sentence(str_Polish)
+        self.assertEqual(out, [9, 35])
+
+
 if __name__ == '__main__':
     unittest.main()

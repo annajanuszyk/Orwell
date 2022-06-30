@@ -19,8 +19,16 @@ def punctuation_count(sentence):
     return count    
 
 
-def words_per_sentence(sentence):
-    return len(string.split(" "))
+def words_per_sentence(text):
+    # won't work with Chinese
+    sentences = text.split(".")
+    result = []
+    for sentence in sentences:
+        if sentence:
+            new_sentence = sentence.strip()
+            print(new_sentence.split(" "))
+            result.append(len(new_sentence.split(" ")))
+    return result
 
 
 def print_punctuation_marks(sentence):
