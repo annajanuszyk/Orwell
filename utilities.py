@@ -38,9 +38,16 @@ def find_punctuation_marks(sentence):
     return punct_str
 
 
-def character_position(sentence):
-    return sentence.find(char)
-
+def character_position(sentence, char):
+    out = []
+    position = 0
+    while True:
+        x = sentence[position:].find(char)
+        if x < 0:
+            return out
+        out.append(position+x)
+        position = position + x + 1
+        
 
 def word_count(old_sentence):
     # won't work with Chinese

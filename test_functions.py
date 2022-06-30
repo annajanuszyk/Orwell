@@ -69,7 +69,16 @@ class TestFindPunctuationMarks(unittest.TestCase):
     def test_Polish(self):
         self.assertEqual(u.find_punctuation_marks(str_Polish), ",.,,,,,.")
 
+class TestFindCharacterPosition(unittest.TestCase):
+    def test_Polish(self):
+        self.assertEqual(u.character_position(".,,.", "."), [0, 3])
 
+    def test_ChineseFalse(self):
+        self.assertFalse(u.character_position(str_Chinese, "."))
+
+    def test_ChineseTrue(self):
+        self.assertEqual(u.character_position(str_Chinese, "，"),
+                         [8, 16, 42, 64, 72])
 
 if __name__ == '__main__':
     unittest.main()
