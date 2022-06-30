@@ -55,6 +55,21 @@ class TestWordsPerSentence(unittest.TestCase):
         out = u.words_per_sentence(str_Polish)
         self.assertEqual(out, [9, 35])
 
+        
+class TestFindPunctuationMarks(unittest.TestCase):
+    def test_Chinese(self):
+        self.assertEqual(u.find_punctuation_marks(str_Chinese), "，，。·，。，，。")
+
+    def test_Chinese2(self):
+        self.assertEqual(u.find_punctuation_marks(str_Chinese_2),
+                         "——（，）——。，，，。，：")
+    def test_English(self):
+        self.assertEqual(u.find_punctuation_marks(str_English), ",.,,,.")
+
+    def test_Polish(self):
+        self.assertEqual(u.find_punctuation_marks(str_Polish), ",.,,,,,.")
+
+
 
 if __name__ == '__main__':
     unittest.main()

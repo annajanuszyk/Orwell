@@ -26,18 +26,16 @@ def words_per_sentence(text):
     for sentence in sentences:
         if sentence:
             new_sentence = sentence.strip()
-            print(new_sentence.split(" "))
             result.append(len(new_sentence.split(" ")))
     return result
 
 
-def print_punctuation_marks(sentence):
+def find_punctuation_marks(sentence):
     punct_str = ""
     for s in sentence:
-        if unicode.category(s).startswith("P"):
+        if unicodedata.category(s).startswith("P"):
             punct_str += s
-
-    return punct_s
+    return punct_str
 
 
 def character_position(sentence):
